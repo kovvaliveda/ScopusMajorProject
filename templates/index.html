@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSV File Upload</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+
+</head>
+  <style>
+    /* Add your custom CSS styles here */
+    .container {
+      margin-top: 50px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 50px;
+    }
+
+    .custom-file-input {
+      padding: 10px;
+      font-size: 18px;
+    }
+
+    .custom-file-label {
+      padding: 10px;
+      font-size: 18px;
+    }
+
+    .btn-upload {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Upload the Scopus ids</h1>
+    <form action="/" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <div class="custom-file">
+          <label class="form-label" for="customFile">Upload the csv file</label>
+          <input type="file" class="form-control" id="customFile" name="file"/>
+          <!-- <input type="file" class="custom-file-input" id="customFile" name="file">
+          <label class="custom-file-label" for="customFile">Choose file</label> -->
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-upload">Analyse</button>
+    </form>
+  </div>
+  <div class="container">
+    <h1>Enter any scopus id</h1>
+    <form class="d-flex" action="{{ url_for('process_id') }}" method="POST">
+      <input class="form-control me-2" type="search" id="id" name="id" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+  <!-- <form action="{{ url_for('process_id') }}" method="POST">
+    <div class="input-group">
+      <div class="form-outline">
+        <input type="search" id="id" name="id" class="form-control" />
+        <label class="form-label" for="id">Search</label>
+      </div>
+      <button type="button" class="btn btn-primary">
+        <i class="fas fa-search"></i>
+      </button>
+    </div> -->
+    <!-- <label for="id">Enter ID:</label>
+    <input type="text" id="id" name="id">
+    <br>
+    <input type="submit" value="Submit"> -->
+  </form>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  
+  
+</body>
+</html>
+
